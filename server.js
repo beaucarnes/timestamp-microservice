@@ -1,6 +1,7 @@
 var express = require("express")
 var app = express()
 var path = require('path')
+app.set('port', (process.env.PORT || 5000));
 
 
 
@@ -32,6 +33,6 @@ app.get('/:param', function (req, res) {
   res.json(date_json)
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+app.listen(app.get('port'), function () {
+  console.log('Example app listening on port' + app.get('port'))
 })
